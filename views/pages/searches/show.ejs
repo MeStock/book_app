@@ -1,1 +1,7 @@
-<% console.log('hello')%>
+<ul>
+    <% tenBooks.forEach(bookObj => { %>
+    <li><%= tenBooks[0].title %></li>
+    <li><%= tenBooks[0].authors %></li>
+    <li><%= tenBooks[0].description %></li>
+    <% }) %>
+</ul>

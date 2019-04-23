@@ -27,7 +27,7 @@ app.get('*',(request, response)=>{
 
 function BookConstructor(title, author, description){
   this.title = title;
-  this.author = author;
+  this.authors = author;
   this.description = description;
 }
 
@@ -42,7 +42,7 @@ app.post('/searches', (request, response) => {
       return bookObj;
     });
     // console.log(tenBooks);
-    response.render('pages/searches/show.ejs');
+    response.render('pages/searches/show.ejs', {tenBooks});
   });
 })
 
