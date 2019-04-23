@@ -1,7 +1,23 @@
-<ul>
-    <% tenBooks.forEach((bookObj, idx) => { %>
-    <li><%= tenBooks[idx].title %></li>
-    <li><%= tenBooks[idx].authors %></li>
-    <li><%= tenBooks[idx].description %></li>
-    <% }) %>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results</title>
+</head>
+<body>
+    <ul>
+        <% tenBooks.forEach((bookObj, idx) => { %>
+        <li><%= tenBooks[idx].title %></li>
+        <li><%= tenBooks[idx].authors %></li>
+        <li><%= tenBooks[idx].description %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
