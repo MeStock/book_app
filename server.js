@@ -16,14 +16,10 @@ app.get('/', (request, response) => {
 })
 
 
-
-
-
-
-
-
-
-
+app.get('*',(request, response)=>{
+  response.render('pages/index.ejs', {root:'./views'});
+  
+})
 
 
 
