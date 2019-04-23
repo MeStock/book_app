@@ -35,6 +35,10 @@ app.post('/searches', (request, response) => {
   // response.send(console.log(request.body.search[0]));
   const URL = `https://www.googleapis.com/books/v1/volumes?q=+title:${request.body.search[0]}`;
   superagent.get(URL).then(result => {
+    if (result.body.totalItems === 0) {
+      response.status(500).send('Sorry, something went wrong');
+      return;
+    }
     let bookReturn = result.body.items;
     let tenBooks = bookReturn.map((bookArray, idx) => {
       let bookData = result.body.items[idx].volumeInfo;
