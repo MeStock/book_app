@@ -24,5 +24,12 @@ This app uses EJS, API's and to return book titles.
 1245 updated readme and deployed site
 
 
+DAY 2
+0945-created db, linked to books.sql
+1024- Added 2 books to db
+1041 - 2 books, rendering to page
+1240 refactored GET built index.ejs, using partials
+140 search and rendering fully functioning 
+
 ## Credits and Collaborations
 TA's and Nicholas
