@@ -1,3 +1,68 @@
 * {
     box-sizing: border-box;
+    color: black;
+    width:100%;
+    margin: auto;
 }
+
+body{
+    color:black;
+    background-color:dark orange;
+    height: 1000px;
+
+}
+
+.container{
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+}
+
+h4{
+    
+    color: white;
+    background-color:orangered;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    height:100px;
+
+}
+form{
+   
+    font-size: 20px;
+    background-color: darkorange;
+    
+    text-align: center;
+}
+
+fieldset{
+    align-content: center;
+}
+ul{
+    background-color: darkorange;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+}
+li{
+border: 2px solid black;
+}
+fieldset {
+	background-color:orange;
+    width:100%;
+	
+	display:inline-block;
+	cursor:pointer;
+	font-family:'Roboto';
+	font-size:14px;
+	
+}
+
+
