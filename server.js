@@ -1,10 +1,17 @@
 'use strict';
-
+require('dotenv').config();
 const express = require('express');
 const superagent = require ('superagent');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
+
+const pg = require('pg');
+
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', console.error);
+client.connect();
+
 
 app.use(express.static('./public'));
 // app.use('/styles',express.static('/public/styles'));
@@ -21,15 +28,19 @@ app.get('*',(request, response)=>{
   response.render('pages/index.ejs', {root:'./views'});
   
 })
+
+
 //----------------GLOBAL CONSTANTS-------------------------
 
 
 //--------------CONSTRUCTOR FUNCTION-----------------------
 
-function BookConstructor(title, author, description){
-  this.title = title;
-  this.authors = author;
-  this.description = description;
+function BookConstructor(bookObj){
+  this.title = bookObj.title;
+  this.authors = bookObj.author;
+  this.description = bookObj.description;
+  this.isbn = bookObj.industryIdentifiers[0].identifier;
+  this.image_url = bookObj.imageLinks.smallThumbnail;
 }
 
 app.post('/searches', (request, response) => {
@@ -42,9 +53,9 @@ app.post('/searches', (request, response) => {
     }
     let bookReturn = result.body.items;
     let tenBooks = bookReturn.map((bookArray, idx) => {
-    let bookData = result.body.items[idx].volumeInfo;
-    let bookObj = new BookConstructor(bookData.title, bookData.authors, bookData.description);
-    return bookObj;
+      let bookData = result.body.items[idx].volumeInfo;
+      let bookObj = new BookConstructor(bookData);
+      return bookObj;
     });
     // console.log(tenBooks);
     response.render('pages/searches/show.ejs', {tenBooks});
