@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/modules.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <head>
-    <title>Book Collection</title>
-  </head>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Books!</title>
+</head>
+
   <body>
     <main>
+      <container class="container">
       <h4>Search by Title or Author</h4>
       <form action="/searches" method="post">
         <input type="text" name="search" placeholder="Enter a title or author" required>
-        <fieldset>
+        <fieldset class="row">
           <label for="title">
             <span>Title</span>
             <input type="radio" name="search" value="title" required>
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset class="row">
           <label for="author">
             <span>Author</span>
             <input type="radio" name="search" value="author" required>
@@ -27,6 +32,7 @@
         </fieldset>
         <button type="submit">Search the Google Books API</button>
       </form>
+    </container>
     </main>
   </body>
 </html>
