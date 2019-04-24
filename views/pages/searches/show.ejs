@@ -11,15 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Best Books!</title>
 </head>
+
 <body>
+  <%- include('../../layout/header.ejs') %>
   <container class="containter">
-  <ul>
-        <% tenBooks.forEach((bookObj, idx) => { %>
-        <li><%= tenBooks[idx].title %></li>
-        <li><%= tenBooks[idx].authors %></li>
-        <li><%= tenBooks[idx].description %></li>
-        <% }) %>
-    </ul>
+  <%- include('../../layout/database.ejs') %>
   </container>
 </body>
 </html>
