@@ -1,0 +1,10 @@
+<ul>
+    <% tenBooks.forEach((bookObj, idx) => { %>
+    <li><%= tenBooks[idx].title %></li>
+    <li><%= tenBooks[idx].author %></li>
+    <li><%= tenBooks[idx].description %></li>
+    <li><%= tenBooks[idx].isbn %></li>
+    <li><%= tenBooks[idx].image_url %></li>
+    <li><%= tenBooks[idx].bookshelf %></li>
+    <% }) %>
+</ul>

@@ -22,6 +22,7 @@ This app uses EJS, API's and to return book titles.
 1215 added error message if user has invalid input
 1240 linked stylesheet added custom font
 1245 updated readme and deployed site
+930 styling and new files.
 
 
 DAY 2
