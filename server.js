@@ -40,7 +40,8 @@ function BookConstructor(bookObj){
   this.authors = bookObj.author;
   this.description = bookObj.description;
   this.isbn = bookObj.industryIdentifiers[0].identifier;
-  this.image_url = bookObj.imageLinks.smallThumbnail;
+  //this.image_url = bookObj.imageLinks.smallThumbnail;
+  this.bookshelf = "test";
 }
 
 app.post('/searches', (request, response) => {
@@ -55,12 +56,18 @@ app.post('/searches', (request, response) => {
     let tenBooks = bookReturn.map((bookArray, idx) => {
       let bookData = result.body.items[idx].volumeInfo;
       let bookObj = new BookConstructor(bookData);
+      //client.query('INSERT INTO books(title, author, description, isbn, image_url, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)', [bookObj.title, bookObj.author, bookObj.description, bookObj.isbn, bookObj.image_url, bookObj.bookshelf ])
       return bookObj;
     });
-    // console.log(tenBooks);
-    response.render('pages/searches/show.ejs', {tenBooks});
+    client.query('SELECT * FROM books;').then(result =>{
+      response.render('pages/searches/show.ejs', {tenBooks: result.rows});
+
+
+    })
+    //response.render('pages/searches/show.ejs', {tenBooks});
   });
 })
+
 
 
 
