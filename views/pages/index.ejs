@@ -13,12 +13,12 @@
 </head>
 
   <body>
-      <%- include('../layout/header.ejs') %>
+      <%- include('../layout/header.ejs', {tenBooks}) %>
     <main>
       <container class="container">
       <%- include('../layout/form.ejs') %>
 
-      <%- include('../layout/database.ejs') %>
+      <%- include('../layout/database.ejs', {tenBooks}) %>
     </container>
     </main>
   </body>
