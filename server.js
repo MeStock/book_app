@@ -19,15 +19,16 @@ app.set('view-engine', 'ejs');
 
 
 app.get('/', displayDataFromDB);
-app.get('*',displayDataFromDB);
 
 app.get('/new', newSearch);
 app.post('/searches', getData);
 
 //TODO: SEE FEATURE TWO (LAB 12)
-// app.get('/books/:id', );
+app.get('/books/:id', viewDetail);
 
 app.post('/saved_books', addBooksToDB);
+
+app.get('*',displayDataFromDB);
 
 //app.post('/', addToDB);
 
@@ -80,6 +81,12 @@ function addBooksToDB(request, response){
   client.query('INSERT INTO books(title, author, description, isbn, image_url, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);', [title, author, description, isbn, image_url, bookshelf]).then(() => {
     response.redirect('/');
   })
+}
+
+function viewDetail(request, response){
+  client.query('SELECT * FROM books WHERE id=$1;', [request.params.id]).then(result => {
+    response.render('pages/books/detail.ejs', {result: result.rows[0]});
+  });
 }
 
 app.listen(PORT, () => console.log(`app is up on port ${PORT}`));
