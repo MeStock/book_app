@@ -1,10 +1,9 @@
 <ul>
-    <% tenBooks.forEach((bookObj, idx) => { %>
-    <li><%= tenBooks[idx].title %></li>
-    <li><%= tenBooks[idx].author %></li>
-    <li><%= tenBooks[idx].description %></li>
-    <li><%= tenBooks[idx].isbn %></li>
-    <li><img src="<%= tenBooks[idx].image_url %>"></li>
-    <li><%= tenBooks[idx].bookshelf %></li>
+    <% tenBooks.forEach(bookObj => { %>
+    <li>Title: <%= bookObj.title %></li>
+    <li><img src="<%= bookObj.image_url %>"></li>
+    <li>Category: <%= bookObj.bookshelf %></li>
+    <a href="/books/<%= bookObj.id %>">View Details</a>
+    </form>
     <% }) %>
 </ul>
