@@ -2,7 +2,9 @@
     box-sizing: border-box;
     color: black;
     width:100%;
+    font-family: 'Fjalla One', sans-serif;
     margin: auto;
+    background-color: whitesmoke;
 }
 
 body{
@@ -11,58 +13,119 @@ body{
     height: 1000px;
 
 }
+header{
+    background-color:orange;
+}
 
 .container{
-    width:80%;
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
+    text-align: center;
+    border: medium black;
 }
-
-h4{
+.navcontainer{
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    font-size:40px;
+    margin-bottom: auto; /* Push following elements to the bottom */
+    margin-top: auto; /* Push it and following elements to the bottom */
+    margin-bottom: 2%;
+    width: 100%;
+    padding:3px;
+    border-bottom: 3px inset orange;
     
+}
+.down{
+    margin-top:5%;
+   
+}
+li a{
+   
+    text-decoration: none;
+}
+li a.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    text-decoration: none;
+   }
+   li a:hover {
+    color: #B6B6B6;
+    text-decoration: none;
+   }
+img{
+    border-radius: 10%;
+    height:100px;
+    width:100px;
+    
+}
+#line{
+    width:100%;
+    background-color: orange;
+    height:5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#logoimg{
+    border-radius: none;
+}
+h4{
     color: white;
     background-color:orangered;
     text-align: center;
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-    height:100px;
-
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+    height:10%;
+    
 }
 form{
-   
     font-size: 20px;
     background-color: darkorange;
-    
     text-align: center;
 }
 
 fieldset{
     align-content: center;
 }
-ul{
-    background-color: darkorange;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
+.searchcontainter ul{
+    box-sizing: border-box;
+    border: thin orange;
     text-align: center;
+    width:80%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-left: 5%;
+    margin-right:5%;
+    
+
 }
-li{
-border: 2px solid black;
+.searchcontainter{
+    border: thin orange;
 }
-fieldset {
-	background-color:orange;
-    width:100%;
-	
-	display:inline-block;
-	cursor:pointer;
-	font-family:'Roboto';
-	font-size:14px;
-	
+#booktitle{
+    font-size: 20px;
+    font-style: bold;
+    margin-bottom: 5px;
 }
 
 
+footer{
+    align-content: center;
+}
+
+.bookimg{
+    height:200px;
+    width:200px;
+
+}
+
+.container img{
+    height: 300px;
+    width: 300px;
+}
