@@ -2,12 +2,13 @@
 
 <body>
   <%- include('../../layout/header.ejs') %>
-  <container class="containter">
+  <container class="searchcontainter">
   <ul>
     <% tenBooks.forEach(bookObj => { %>
-    <li>Title: <%= bookObj.title %></li>
-    <li>Author: <%= bookObj.authors %></li>
-    <li>Description: <%= bookObj.description %></li>
+    <li id = "booktitle"><%= bookObj.title %></li>
+    <li><img class = "bookimg" src="<%= bookObj.image_url %>"></li>
+    <li><%= bookObj.authors %></li>
+    <li><%= bookObj.description %></li>
     <li>ISBN: <%= bookObj.isbn %></li>
     <li><img src="<%= bookObj.image_url %>"></li>
     <li>
