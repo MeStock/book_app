@@ -1,6 +1,5 @@
 <%- include('../../layout/head.ejs') %>
 
-
 <body>
   <%- include('../../layout/header.ejs') %>
   <container class="containter">
@@ -11,19 +10,14 @@
     <li>Description: <%= bookObj.description %></li>
     <li>ISBN: <%= bookObj.isbn %></li>
     <li><img src="<%= bookObj.image_url %>"></li>
-    <!-- <li><%= bookObj.bookshelf %></li> -->
     <li>
-      <form action="/saved_books" method="POST">
-        <input type="hidden" name="title" value="<%= bookObj.title %>">
-        <input type="hidden" name="author" value="<%= bookObj.author %>">
-        <input type="hidden" name="description" value="<%= bookObj.description %>">
-        <input type="hidden" name="image_url" value="<%= bookObj.image_url %>">
-        <input type="text" name="bookshelf" value="Please insert category here">
-        <input type="submit">
-      </form>
+      <input type="submit" value="Select Book" id="showForm">
+    <%- include('../../layout/updateForm.ejs', {bookObj: bookObj}) %>
     </li>
     <% }) %>
   </ul>
   </container>
+<script src="JS/app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,9 @@
+      <form action="/saved_books" method="POST">
+        <input type="text" value="PUT" name='_method'>
+        <input type="text" name="title" value="<%= bookObj.title %>" class="bookDetails">
+        <input type="text" name="author" value="<%= bookObj.author %>" class="bookDetails">
+        <input type="text" name="description" value="<%= bookObj.description %>"class="bookDetails">
+        <input type="text" name="image_url" value="<%= bookObj.image_url %>"class="bookDetails">
+        <input type="text" name="bookshelf" value="Please insert category here"class="bookDetails">
+        <input type="submit" value="Save This Book" class="bookDetails">
+      </form>
