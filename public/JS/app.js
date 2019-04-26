@@ -1,5 +1,5 @@
 'use strict';
 
-$("#showForm").on('click', e => { 
-$(".bookDetails").toggle();
-}); 
+$('#showForm').on('click', event => {
+  $('.bookDetails').toggle();
+});
